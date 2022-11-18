@@ -1,7 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-weight: 700;
+  margin: 0;
+}
+  
+h4 {
+  font-weight: 400;
+  margin: 0;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+.paddingTop {
+  height: 0vh;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+  .paddingTop {
+    height: 10vh;
+  }
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: 1px solid red;
+}
+
+.width33{
+  width:33.33%;
+}
+.width66{
+  width:66.66%;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.verticalCenteredTextContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.titleContainer{
+  font-size: 6vh;
+}
+
 body {
   font-family: 'Fahkwang', sans-serif;
   color: white;
-  height: auto;
   margin: 0;
   overscroll-behavior-y: none;
 }
@@ -32,6 +105,10 @@ body {
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
+}
+
+.topTitleBar{
+  height: 15vh;
 }
 
 .topContent,
@@ -107,12 +184,10 @@ body {
 
 .circle,
 .pfpImg {
-  position: fixed;
-  top: 10vh;
-  left: 10vw;
-  width: 8rem;
-  height: 8rem;
+  width: 15vh;
+  height: 15vh;
   border-radius: 50%;
+  padding: 0%;
 }
 
 .whiteborder {
@@ -125,22 +200,43 @@ body {
 }
 
 .title,
-.invertedTitle,
-.subtitle {
-  text-align: left;
-  position: fixed;
-  top: 0vh;
-  left: 20vw;
-  font-size: 1rem;
+.invertedTitle{
+  padding: 0;
+  padding-left: 15px;
 }
 
-.subtitle{
-  top: 25vh;
+.topMiddlePadding{
+  height:50vh;
 }
 
-.title,
-.invertedTitle {
-  font-size: 8rem;
+.hintRow {
+  height: 15vh;
+}
+
+.arrow{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.arrowImg{
+  width: 8vh;
+  height: 8vh;
+  stroke: rgb(255, 255, 255);
+  opacity: 40%;
+  animation-name: ArrowBob;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.invis{
+  opacity: 0;
+}
+
+.lowerMiddlePadding{
+  height:10vh;
 }
 
 .links {
@@ -233,18 +329,6 @@ body {
   font-size: 1.75rem;
 }
 
-
-
-h1 {
-font-weight: 700;
-font-size: 5rem;
-}
-
-h4 {
-font-weight: 400;
-font-size: 0.8rem;
-}
-
 @keyframes BackgroundScrollAnimation {
   0% {
     transform: translateX(0%) translateY(-500%);
@@ -266,6 +350,21 @@ font-size: 0.8rem;
   }
   100% {
     transform: translateX(0%) translateY(-83.333%);
+  }
+}
+
+@keyframes ArrowBob {
+  0% {
+    transform: translateY(5%);
+    opacity: 80%;
+  }
+  50% {
+    transform: translateY(-5%);
+    opacity: 40%;
+  }
+  100% {
+    transform: translateY(5%);
+    opacity: 80%;
   }
 }
 
