@@ -219,6 +219,10 @@ body {
   align-content: center;
 }
 
+.alphaSortFix{
+  position: fixed;
+}
+
 .arrowImg{
   width: 8vh;
   height: 8vh;
