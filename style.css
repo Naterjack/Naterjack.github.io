@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow: hidden;
+}
+
 h1 {
   font-weight: 700;
   margin: 0;
@@ -19,6 +23,9 @@ h4 {
 
 .paddingTop {
   height: 0vh;
+}
+.lowerMiddlePadding {
+  height: 20vh;
 }
 
 @media only screen and (min-width: 768px) {
@@ -38,6 +45,9 @@ h4 {
   .paddingTop {
     height: 10vh;
   }
+  .lowerMiddlePadding{
+    height:10vh;
+  }
 }
 
 [class*="col-"] {
@@ -45,7 +55,8 @@ h4 {
   padding: 15px;
   padding-top: 0;
   padding-bottom: 0;
-  border: 1px solid red;
+  margin: 0;
+  -border: 1px solid red;
 }
 
 .width33{
@@ -76,6 +87,10 @@ body {
   font-family: 'Fahkwang', sans-serif;
   color: white;
   margin: 0;
+  height: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   overscroll-behavior-y: none;
 }
 
@@ -119,7 +134,7 @@ body {
 }
 
 .lowerContent {
-  height: 87vh;
+  height: 88vh;
 }
 
 .topContentInternal,
@@ -239,11 +254,29 @@ body {
   opacity: 0;
 }
 
-.lowerMiddlePadding{
-  height:10vh;
+.link {
+  padding-left: 10vw;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.5rem;
+  transition-property: font-size, opacity; 
+  transition-duration: 400ms; 
+  transition-timing-function: ease;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
+.menuItems:hover > .row > .link {
+  opacity: 0.4;
+}
 
+.menuItems:hover > .row > .link:hover {
+  font-size: 3.5rem;
+  opacity: 1;
+}
 
 .button {
   /*background-color: #FACBDF;*/
