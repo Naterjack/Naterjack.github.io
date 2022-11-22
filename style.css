@@ -243,33 +243,7 @@ body {
   height:10vh;
 }
 
-.links {
-  position: relative;
-  height: 8rem;
-  width: 65vw;
-  top: 12vh;
-  left: 35vw;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
 
-.link {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-  text-align: center;
-  width: 8vw;
-  margin-left: 1vw;
-  margin-right: 1vw;
-  height: 40%;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.25rem;
-  font-weight: 500;
-}
 
 .button {
   /*background-color: #FACBDF;*/
