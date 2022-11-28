@@ -4,6 +4,7 @@
 
 html {
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 h1 {
@@ -28,8 +29,8 @@ h4 {
   height: 20vh;
 }
 
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
+@media only screen and (min-width: 1355px) {
+  /* For desktop: , W3 normally recommends 768px*/
   .col-1 {width: 8.33%;}
   .col-2 {width: 16.66%;}
   .col-3 {width: 25%;}
@@ -92,6 +93,7 @@ body {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-y: none;
+  scroll-behavior: smooth;
 }
 
 .backgroundContainer {
@@ -216,6 +218,7 @@ body {
 .circle {
   border: 4px solid white;
   background: black;
+  min-width: 15vh;
 }
 
 .title,
