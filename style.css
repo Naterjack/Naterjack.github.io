@@ -56,7 +56,7 @@ h4 {
   padding-top: 0;
   padding-bottom: 0;
   margin: 0;
-  -border: 1px solid red;
+  border: 1px solid red;
 }
 
 .width33{
@@ -135,6 +135,10 @@ body {
 
 .lowerContent {
   height: 88vh;
+}
+
+.fullHeight {
+  height:100vh;
 }
 
 .topContentInternal,
@@ -255,7 +259,7 @@ body {
 }
 
 .link {
-  padding-left: 10vw;
+  padding-left: 10.75vw;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 2.5rem;
   transition-property: font-size, opacity; 
