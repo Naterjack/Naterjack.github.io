@@ -1,0 +1,7 @@
+Icons are not mine, and are properties of their respective owners, who I am not associated with.
+
+-Envelope.svg and InformationCircle.svg taken from heroicons.dev (MIT license)
+
+-Github-mark.svg taken from https://github.com/logos
+
+-discord.svg from https://discord.com/branding

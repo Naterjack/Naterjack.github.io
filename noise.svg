@@ -14,5 +14,5 @@
               0.0   0.0   1.0   0.0   0.0
               0.0   0.0   0.0   1.0   0.0" />
   </filter>
-  <rect width='100%' height='100%' filter='url(#noiseRGBFilter)'/>
+  <rect width='1024' height='1024' filter='url(#noiseRGBFilter)'/>
 </svg>

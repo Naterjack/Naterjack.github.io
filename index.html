@@ -1,97 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JoysWildRide</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@400;500;700&family=Space+Grotesk&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script
+      src="./lib/gl-matrix/gl-matrix.js"
+      crossorigin="anonymous"
+      defer></script>
+    <script src="webgl-background.js" type="module"></script>
+    <script src="extras.js" type="module"></script>
   </head>
+
   <body>
-
-    <div class="topContent">
-      <div class="backgroundContainer">
-        <div class="backgroundContent"></div>
-      </div>
-      <div class='topContentInternal'>
-        <h1 class="title">Joy</h1>
-        <h4 class="subtitle"> 21 &nbsp; | &nbsp; She/They &nbsp; | &nbsp; 🏳️‍⚧️  </h4>
-        <img class="pfpImg whiteborder" src="img/Memoji.png">
-      </div>
+    <canvas id="glcanvas"></canvas>
+    <div id="grain"></div>
+    <div class="text-center" id="info-text">
     </div>
-
-    <div class="lowerContent">
-      <div class="lowerBackgroundContainer">
-        <div class="lowerBackgroundContent">
-          <div class="lowerContentInternal">
-            <h1 class="invertedTitle">Joy</h1>
-            <div class="circle"></div>
-          </div>
-          <div class="lowerContentInternalNoBlend">
-            <img class="pfpImg whiteborder" src="img/Memoji.png">
-            <div class="links">
-              <div class="link">About</div>
-              <div class="link">Projects</div>
-              <div class="link">Socials</div>
-              <div class="link button">Contact</div>
-            </div>
-            <div class="mainText">
-              <p class="subsubheadings about">Hi, I'm Joy, a Computer Science graduate from the University of Warwick with a strong interest in Machine Learning and Machine Vision applications</p>
-              <div class="mainTextContent">
-                <div class="column">
-                  <h2 class="headings education">
-                    Education
-                  </h2>
-                  <p class="subheadings">
-                    University of Warwick - Computer Science BSc 2:1
-                  </p>
-                  <p>
-                    2019-2022
-                  </p>
-                  <p class="subheadings">
-                    Hills Road Sixth Form College
-                  </p>
-                  <p>
-                    A* A* A A <br>
-                    2017-2019
-                  </p>
-                  <h2  class="headings">
-                    Interests
-                  </h2>
-                  <p class="subheadings">
-                    ML, Computer Vision, Game design and development, Mobile App design and development
-                  </p>
-                </div>
-                <div class="column">
-                  <h2 class="headings">
-                    Skills
-                  </h2>
-                  <h4 class="subheadings">
-                    Programming Languages
-                  </h4>
-                  <p>
-                    Strong: Python, Java <br>
-                    Intermediate: C++, JS, HTML, CSS, Swift
-                  </p>
-                  <h4 class="subheadings">
-                    Software
-                  </h4>
-                  <p>
-                    Experience using: <br>
-                    TensorFlow <br>
-                    Unreal Engine 4/5 <br>
-                    Three.JS <br>
-                    Framer / Figma / Sketch <br>
-                    Windows / MacOS / Linux <br>
-                  </p>
-                </div>
-              </div>
-          </div>
+    <div id="overlay">
+      <div class="container-fluid p-">
+        <h1 class="display-1 text-center" id="title">Joy</h1>
+      </div>
+      <div class="container-fluid p-0">
+          <h3 class="display-8 text-center" id="subtitle">22 &nbsp; | &nbsp; She/They &nbsp; | &nbsp; 🏳️&zwj;⚧️  </h3>
+      </div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col" id="AboutButton">
+          <svg class="mx-auto d-block invertable-button" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path clip-rule="evenodd" fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z"></path>
+          </svg>
         </div>
+        <a href="mailto:Joy.Ginn@outlook.com" class="col">
+          <svg class="mx-auto d-block invertable-button" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"></path>
+            <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"></path>
+          </svg>
+        </a>
+        <a href="https://github.com/Naterjack" class="col">
+          <img src="./img/glyph/github-mark.svg" class="filter-white mx-auto d-block icon invertable-button">
+        </a>
+        <div class="col">
+          <img src="./img/glyph/discord.svg" class="filter-white mx-auto d-block icon invertable-button">
+        </div>
+        <div class="col"></div>
       </div>
     </div>
-
-    <script type="text/javascript" src="safariCompat.js"></script>
   </body>
 </html>
