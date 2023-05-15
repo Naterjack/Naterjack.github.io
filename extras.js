@@ -5,16 +5,17 @@ var buttons = document.getElementsByClassName('invertable-button');
 var infoText = document.getElementById('info-text');
 
 let bio = `
-     I'm a computer scientist specialising in ethical deep learning & machine vision.
+    <font size=4> I'm a computer scientist specialising in ethical deep learning & machine vision.
      <br/>
      <br/>
      Hobbyist game dev, with experience in Godot, UE 4/5 and Unity.
      <br/>
      <br/>
      Soon to be an AI MSc student @ Loughborough University
+     </font>
      <br/>
      Previously: <br/>
-        <b><font size=4> University of Warwick </font></b>(2019-2022) <br/>  Computer Science BSc 2.1
+        <b><font size=3> University of Warwick </font></b>(2019-2022) <br/>  Computer Science BSc 2.1
     `
 
 let isOverlayed = false;
